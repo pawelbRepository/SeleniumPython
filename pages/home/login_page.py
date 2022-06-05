@@ -30,7 +30,7 @@ class LoginPage(SeleniumDriverHelper):
 
     def verify_login_failed(self, expected_text_eng, expected_text_pl):
         element = self.wait_for_element(*LoginPageLocators.LOGIN_FAILED_MESSAGE, timeout=3)
-        result = self.is_element_displayed(element=element)
+        result = self.get_element_text(element=element)
         if expected_text_eng == result:
             return True
         elif expected_text_pl == result:

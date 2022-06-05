@@ -18,5 +18,5 @@ headless:
 
 6. or add to run configuration:
 
-path to tests directory: (...)/tests/home  
-arguments: --browser chrome --html=..\..\reports\Report.html -m smoke --headless 0
+type: Python tests > pytest
+![img.png](configfiles/img.png)

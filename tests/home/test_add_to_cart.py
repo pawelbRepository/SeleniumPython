@@ -15,7 +15,7 @@ class TestAddToCart:
         self.add_to_cart_page = AddToCartPage(self.driver)
         self.navigation_page = NavigationPage(self.driver)
 
-    @pytest.mark.smoke
+    @pytest.mark.smoke2
     @pytest.mark.run(order=1)
     def test_add_products_to_cart(self, data_load):
         self.login_page = LoginPage(self.driver)
