@@ -52,6 +52,7 @@ def return_screenshot_file_name(message):
     file_name = str(dt_string) + "_" + message + ".png"
     return file_name
 
+
 def screen_shot(driver, message):
     """
     Takes screenshot of the current open web page

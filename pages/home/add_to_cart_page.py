@@ -14,7 +14,6 @@ class AddToCartPage(SeleniumDriverHelper):
         super().__init__(driver)
         self.nav = NavigationPage(driver)
 
-
     def get_product_list(self):
         products_list = self.get_element_list(*AddToCartPageLocators.PRODUCT_LIST)
         return products_list

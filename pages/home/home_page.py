@@ -30,7 +30,6 @@ class NavigationPage(SeleniumDriverHelper):
     def __init__(self, driver):
         super().__init__(driver)
 
-
     def go_to_main_page(self):
         self.element_click(*NavigationPageLocators.MAIN_PAGE)
 

@@ -11,7 +11,7 @@ class TestAddToCart:
     log = cl.custom_logger(logging.DEBUG)
 
     @pytest.fixture(autouse=True)
-    def objectSetup(self, one_time_setup):
+    def object_setup(self, one_time_setup):
         self.add_to_cart_page = AddToCartPage(self.driver)
         self.navigation_page = NavigationPage(self.driver)
 
