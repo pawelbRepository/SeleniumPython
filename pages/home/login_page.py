@@ -28,10 +28,14 @@ class LoginPage(SeleniumDriverHelper):
     def click_login_button(self):
         self.element_click(*LoginPageLocators.LOGIN_BUTTON)
 
-    def verify_login_failed(self):
+    def verify_login_failed(self, expected_text_eng, expected_text_pl):
         element = self.wait_for_element(*LoginPageLocators.LOGIN_FAILED_MESSAGE, timeout=3)
         result = self.is_element_displayed(element=element)
-        return result
+        if expected_text_eng == result:
+            return True
+        elif expected_text_pl == result:
+            return True
+        return False
 
     def login(self, email='default@Email', password='defaultPassword'):
         self.click_login_link()

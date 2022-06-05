@@ -15,7 +15,7 @@ class TestRegistration:
     def test_registration_with_wrong_email(self):
         self.login_page = LoginPage(self.driver)
         self.log.info('*#' * 20)
-        self.log.info('test_TC1_registration_with_wrong_email started')
+        self.log.info('test_TC-01_registration_with_wrong_email started')
         self.log.info('*#' * 20)
         self.login_page.click_login_link()
         self.registration_page = self.login_page.click_no_account_to_register()
@@ -39,7 +39,7 @@ class TestRegistration:
     def test_registration_with_valid_email(self, data_load):
         self.login_page = LoginPage(self.driver)
         self.log.info('*#' * 20)
-        self.log.info('test_TC2_registration_with_valid_email started')
+        self.log.info('test_TC-02_registration_with_valid_email started')
         self.log.info('*#' * 20)
         self.login_page.click_login_link()
         self.registration_page = self.login_page.click_no_account_to_register()

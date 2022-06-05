@@ -14,10 +14,11 @@ class TestLogin:
     def test_invalid_login(self):
         self.login_page = LoginPage(self.driver)
         self.log.info('*#' * 20)
-        self.log.info('test_TC1_invalidLogin started')
+        self.log.info('test_TC-03_invalidLogin started')
         self.log.info('*#' * 20)
         self.login_page.login('wrong@email', 'wrongPassword')
-        result = self.login_page.verify_login_failed()
+        result = self.login_page.verify_login_failed(expected_text_eng='Authentication failed.',
+                                                     expected_text_pl='Błąd uwierzytelniania.')
         assert result, 'Verification Failed'
 
     @pytest.mark.smoke
@@ -25,7 +26,7 @@ class TestLogin:
     def test_valid_login(self, data_load):
         self.login_page = LoginPage(self.driver)
         self.log.info('*#' * 20)
-        self.log.info('test_TC2_validLogin started')
+        self.log.info('test_TC-04_validLogin started')
         self.log.info('*#' * 20)
         self.home_page = self.login_page.login(data_load[0], data_load[1])
         result1 = self.home_page.verify_title_after_login('My account', 'Moje konto')

@@ -20,7 +20,7 @@ class TestAddToCart:
     def test_add_products_to_cart(self, data_load):
         self.login_page = LoginPage(self.driver)
         self.log.info('*#' * 20)
-        self.log.info('test_TC1_add_products_to_cart started')
+        self.log.info('test_TC-05_add_products_to_cart started')
         self.log.info('*#' * 20)
         self.home_page = self.login_page.login(data_load[0], data_load[1])
         result_login = self.home_page.verify_login_successful()
