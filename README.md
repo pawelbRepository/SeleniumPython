@@ -18,5 +18,6 @@ headless:
 
 6. or add to run configuration:
 
-type: Python tests > pytest
+type: Python tests > pytest  
+example:
 ![img.png](configfiles/img.png)
