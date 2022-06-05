@@ -15,7 +15,7 @@ class TestCreateOrder:
         self.add_to_cart_page = AddToCartPage(self.driver)
         self.navigation_page = NavigationPage(self.driver)
 
-    @pytest.mark.smoke2
+    @pytest.mark.smoke
     @pytest.mark.run(order=1)
     def test_create_order(self, data_load):
         self.login_page = LoginPage(self.driver)
