@@ -12,10 +12,14 @@ class RegistrationPage(SeleniumDriverHelper):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def verify_page_loaded(self, expected_text):
+    def verify_page_loaded(self, expected_text_eng, expected_text_pl):
         element = self.wait_for_element(*RegistrationPageLocators.REGISTRATION_PAGE_EXPECTED_TEXT_ELEMENT)
         result = self.get_element_text(element=element)
-        return expected_text == result
+        if expected_text_eng == result:
+            return True
+        elif expected_text_pl == result:
+            return True
+        return False
 
     def set_gender(self):
         self.element_click(*RegistrationPageLocators.RADIOBUTTON_GENDER_MEN)
@@ -36,10 +40,14 @@ class RegistrationPage(SeleniumDriverHelper):
         self.element_click(*RegistrationPageLocators.CONSENT_1_OF_2)
         self.element_click(*RegistrationPageLocators.CONSENT_2_OF_2)
 
-    def verify_wrong_email_message(self, expected_text):
+    def verify_wrong_email_message(self, expected_text_eng, expected_text_pl):
         element = self.wait_for_element(*RegistrationPageLocators.WRONG_EMAIL_ERROR_MESSAGE_FIELD)
         result = self.get_element_text(element=element)
-        return expected_text == result
+        if expected_text_eng == result:
+            return True
+        elif expected_text_pl == result:
+            return True
+        return False
 
     def click_create_account_button(self):
         self.element_click(*RegistrationPageLocators.CREATE_ACCOUNT_BUTTON)

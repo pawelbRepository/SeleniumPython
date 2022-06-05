@@ -19,7 +19,8 @@ class TestRegistration:
         self.log.info('*#' * 20)
         self.login_page.click_login_link()
         self.registration_page = self.login_page.click_no_account_to_register()
-        result1 = self.registration_page.verify_page_loaded(expected_text='Stwórz konto')
+        result1 = self.registration_page.verify_page_loaded(expected_text_eng='Create an account',
+                                                            expected_text_pl='Stwórz konto')
         assert result1, 'Loading Page Failure'
         self.registration_page.set_gender()
         self.registration_page.enter_first_name("Test")
@@ -29,7 +30,8 @@ class TestRegistration:
         self.registration_page.mark_required_consents()
         self.registration_page.click_create_account_button()
         result2 = self.registration_page.verify_wrong_email_message(
-            expected_text='Ten adres e-mail jest już używany, proszę wybierz inny albo zaloguj się')
+            expected_text_eng='The email is already used, please choose another one or sign in',
+            expected_text_pl='Ten adres e-mail jest już używany, proszę wybierz inny albo zaloguj się',)
         assert result2, 'Message Verification Failed'
 
     @pytest.mark.smoke
@@ -41,7 +43,8 @@ class TestRegistration:
         self.log.info('*#' * 20)
         self.login_page.click_login_link()
         self.registration_page = self.login_page.click_no_account_to_register()
-        result1 = self.registration_page.verify_page_loaded(expected_text='Stwórz konto')
+        result1 = self.registration_page.verify_page_loaded(expected_text_eng='Create an account',
+                                                            expected_text_pl='Stwórz konto')
         assert result1, 'Loading Page Failure'
         self.registration_page.set_gender()
         self.registration_page.enter_first_name("Test")
