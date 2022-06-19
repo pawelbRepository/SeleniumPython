@@ -22,6 +22,7 @@ class TestLogin:
         assert result, 'Verification Failed'
 
     @pytest.mark.smoke
+    @pytest.mark.test_login
     @pytest.mark.run(order=2)
     def test_valid_login(self, data_load):
         self.login_page = LoginPage(self.driver)

@@ -11,6 +11,7 @@ class TestRegistration:
     log = cl.custom_logger(logging.DEBUG)
 
     @pytest.mark.smoke
+    @pytest.mark.test_registration
     @pytest.mark.run(order=1)
     def test_registration_with_wrong_email(self):
         self.login_page = LoginPage(self.driver)

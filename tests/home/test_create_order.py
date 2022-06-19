@@ -16,6 +16,7 @@ class TestCreateOrder:
         self.navigation_page = NavigationPage(self.driver)
 
     @pytest.mark.smoke
+    @pytest.mark.test_create_order
     @pytest.mark.run(order=1)
     def test_create_order(self, data_load):
         self.login_page = LoginPage(self.driver)
