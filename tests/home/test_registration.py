@@ -36,6 +36,7 @@ class TestRegistration:
         assert result2, 'Message Verification Failed'
 
     @pytest.mark.smoke
+    @pytest.mark.test_registration
     @pytest.mark.run(order=1)
     def test_registration_with_valid_email(self, data_load):
         self.login_page = LoginPage(self.driver)

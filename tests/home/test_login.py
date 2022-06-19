@@ -10,6 +10,7 @@ class TestLogin:
     log = cl.custom_logger(logging.DEBUG)
 
     @pytest.mark.smoke
+    @pytest.mark.test_login
     @pytest.mark.run(order=1)
     def test_invalid_login(self):
         self.login_page = LoginPage(self.driver)
